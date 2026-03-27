@@ -1,6 +1,10 @@
 sistem absensi face recognition
 
 
+golang backend
+nextjs frontend
+postgresql
+
 fitur :
 
 guest
