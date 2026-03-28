@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   webpack: (config, { isServer }) => {
-    // Abaikan modul 'fs' di sisi client untuk face-api.js
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
@@ -11,12 +10,9 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
-  // Abaikan error minor agar Vercel tetap merilis aplikasi
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // eslint dihapus karena sudah tidak didukung di sini
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: true, // Ini masih didukung untuk melewati error TypeScript
   },
 };
 
